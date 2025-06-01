@@ -1,0 +1,27 @@
+# metadata.yaml  –  Fish City Studios Collector’s Guide
+
+# --- Basic document info (shows up in PDF properties) ---
+title: "Fish City Studios — Collector’s Guide v0.1"
+subtitle: "Collect outsider art with confidence"
+author: "Mark Henderson"
+date: "June 2025"
+
+# --- Optional descriptive tags (helpful if the PDF circulates) ---
+subject: "Outsider-art buying guide for new and seasoned collectors"
+keywords: ["Fish City Studios", "Jon Sarkin", "Patrick O’Donnell",
+           "art collecting", "outsider art", "Gloucester"]
+
+# --- Language & accessibility ---
+lang: "en-US"
+colorlinks: true          # Eisvogel var — makes links blue instead of boxed
+links-as-notes: false     # keep live links inline, not footnotes
+
+# --- Layout tweaks (all Eisvogel-compatible) ---
+geometry: "margin=1in"    # wider white space for a brochure look
+fontsize: "11pt"
+logo: "assets/img/fcs_logo_black.png"   # small logo on title page (optional)
+
+# --- PDF/XMP metadata for downstream cataloging (totally optional) ---
+publisher: "Fish City Studios"
+rights: "© 2025 Fish City Studios — All rights reserved"
+
