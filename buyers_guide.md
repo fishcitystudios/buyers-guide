@@ -4,7 +4,7 @@ date: 2025-06-XX
 author: "Mark Henderson"
 ---
 
-<pre> ```{=latex} \newpage ``` </pre>
+\newpage
 
 # Welcome to Fish City Studios  
 *Collect outsider art with confidence*
@@ -38,7 +38,7 @@ author: "Mark Henderson"
 [Book a gallery visit](https://cal.com/fishcity/visit)  
 [Online catalog ↗](https://jonsarkin.com/collections)
 
-<pre> ```{=latex} \newpage ``` </pre>
+```{=latex}\newpage```
 
 ## Patrick O’Donnell  
 *Bold abstracts • Exhibiting Salted Cod & Maritime 2025*
@@ -48,7 +48,9 @@ Next show: **Maritime 2025 (June 15–30)**
 
 [Shop Patrick’s work](https://fishcitystudios.com/collections/patrick)  
 
-<pre> ```{=latex} \newpage ``` </pre>
+```{=latex}
+\newpage
+```
 
 ## FAQ
 **Can I pay in installments?** Yes—contact us for 3-month plans.  
