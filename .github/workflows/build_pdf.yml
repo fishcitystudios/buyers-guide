@@ -28,7 +28,8 @@ jobs:
                         sourcesanspro \
                         xkeyval \
                         sourcecodepro \
-                        titling
+                        titling \
+                        pagecolor
 
       - name: Fetch Eisvogel template
         run: |
@@ -42,7 +43,7 @@ jobs:
       - name: Build PDF
         run: |
           pandoc buyers_guide.md \
-          --template=Eisvogel-3.2.0/eisvogel.latex \
+            --template=Eisvogel-3.2.0/eisvogel.latex \
             --metadata-file=metadata.yaml \
             --pdf-engine=xelatex \
             -o buyers_guide.pdf

@@ -30,3 +30,7 @@ logo: "assets/img/fcs_logo_black.png"   # small logo on title page (optional)
 publisher: "Fish City Studios"
 rights: "© 2025 Fish City Studios — All rights reserved"
 
+# --- Running headers and footers ---
+header-left: "Fish City Studios"
+header-right: "Collector’s Guide • June 2025"
+footer-center: "Page \\thepage"
