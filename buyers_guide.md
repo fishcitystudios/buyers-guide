@@ -4,6 +4,8 @@ date: 2025-06-XX
 author: "Mark Henderson"
 ---
 
+<pre> ```{=latex} \newpage ``` </pre>
+
 # Welcome to Fish City Studios  
 *Collect outsider art with confidence*
 
