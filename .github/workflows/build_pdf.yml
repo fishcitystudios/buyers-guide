@@ -1,0 +1,55 @@
+name: Build Buyers Guide PDF
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - buyers_guide.md
+      - metadata.yaml
+      - assets/**
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    container: pandoc/latex:3.7
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install KOMA-Script (scrartcl.cls)
+        run: |
+          tlmgr update --self --all
+          tlmgr install koma-script \
+                        footnotebackref \
+                        mdframed \
+                        zref \
+                        needspace \
+                        sourcesanspro \
+                        xkeyval \
+                        sourcecodepro \
+                        titling
+
+      - name: Fetch Eisvogel template
+        run: |
+          mkdir -p .pandoc/templates
+          curl -sSL \
+            https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.2.0/Eisvogel-3.2.0.tar.gz \
+            -o Eisvogel.tar.gz
+          tar xf Eisvogel.tar.gz && rm Eisvogel.tar.gz
+
+      # ---- Build PDF ----
+      - name: Build PDF
+        run: |
+          pandoc buyers_guide.md \
+          --template=Eisvogel-3.2.0/eisvogel.latex \
+            --metadata-file=metadata.yaml \
+            --pdf-engine=xelatex \
+            -o buyers_guide.pdf
+
+      # ---- Publish artifact ----
+      - uses: actions/upload-artifact@v4
+        with:
+          name: buyers-guide-pdf
+          path: buyers_guide.pdf
+
