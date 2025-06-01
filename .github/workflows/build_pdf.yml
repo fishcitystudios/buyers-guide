@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install git
+        run: sudo apt-get install git
+
       - name: Install KOMA-Script (scrartcl.cls)
         run: |
           tlmgr update --self --all
