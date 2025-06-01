@@ -54,3 +54,28 @@ jobs:
           name: buyers-guide-pdf
           path: buyers_guide.pdf
 
+      # ---- Create/Update 'dev' tag ----
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create or update 'dev' tag and push
+        run: |
+          git fetch --tags
+          git tag -f dev
+          git push origin dev --force
+
+      # ---- Create or update GitHub Release with PDF asset ----
+      - name: Create or update release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: dev
+          name: "Development Build"
+          body: "Always up-to-date buyers_guide.pdf"
+          draft: false
+          prerelease: true
+          files: buyers_guide.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
