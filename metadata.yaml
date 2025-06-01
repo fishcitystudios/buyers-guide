@@ -7,6 +7,10 @@ author: "Mark Henderson"
 date: "June 2025"
 titlepage: true
 
+# --- Table of Contents ---
+toc: true          # inserts TOC after title page
+toc-depth: 2       # H1 and H2 only
+
 # --- Optional descriptive tags (helpful if the PDF circulates) ---
 subject: "Outsider-art buying guide for new and seasoned collectors"
 keywords: ["Fish City Studios", "Jon Sarkin", "Patrick O’Donnell",
